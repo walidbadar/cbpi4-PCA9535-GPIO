@@ -82,8 +82,8 @@ class PCF8574Actor(CBPiActor):
         self.p1on  = "HIGH" if self.inverted == False else "LOW"
         self.gpio = self.props.get("GPIO", "p0")
         self.sampleTime = int(self.props.get("SamplingTime", 5))
-        p1.pin_mode(self.gpio,"OUTPUT")
-        p1.write(self.gpio, self.off)
+        #p1.pin_mode(self.gpio,"OUTPUT")
+        p1.write(self.gpio, self.p1off)
         self.state = False
 
     async def on(self, power = None):
