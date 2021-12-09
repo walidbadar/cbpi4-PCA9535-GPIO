@@ -9,9 +9,9 @@ with open(path.join(this_directory, 'README.md'), encoding='utf-8') as f:
 setup(name='cbpi4-PCF8574-GPIO',
       version='0.0.1',
       description='CraftBeerPi Plugin',
-      author='',
-      author_email='',
-      url='',
+      author='Alexander Vollkopf',
+      author_email='avollkopf@web.de',
+      url='https://github.com/avollkopf/cbpi4-PCF8574-GPIO',
       include_package_data=True,
       package_data={
         # If any package contains *.txt or *.rst files, include them:
