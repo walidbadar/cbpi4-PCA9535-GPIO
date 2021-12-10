@@ -12,11 +12,14 @@ Theoretically, multiple boards (up to 8) could be connected with different addre
 	
 ### Usage:
 
-- Add an actor and select PCF8574Actor
-- Select a pin you want to switch
+- Configure the PCF8574 I2C Address in the cbpi global settings. 
+
+![PCF8574 I2C address Settings](https://github.com/avollkopf/cbpi4-PCF8574-GPIO/blob/main/PCF8574_Address_Settings.png?raw=true)
+
+- Add an actor under Hardware/Actor and select PCF8574Actor
+- Select the pin you want to switch (p0 to p7)
 - Select 2 or 5 seconds for the Samplingtime (Will define the 'Resolution' for Power settings)
 - Select Inverted yes or no. No means, that the pin will be on high if the sensor is active
-
 
 ### Hardware requirements:
 
@@ -26,5 +29,6 @@ According to the datasheet, the pins can handle up to 25 mA. If you want to trig
 
 ### Changelog:
 
+- 10.12.21: (0.0.3) Updated README
 - 09.12.21: (0.0.2) Bug Fix for power
 - 09-12-21: (0.0.1) Initial release
