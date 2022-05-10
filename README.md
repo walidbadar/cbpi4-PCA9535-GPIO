@@ -29,6 +29,7 @@ According to the datasheet, the pins can handle up to 25 mA. If you want to trig
 
 ### Changelog:
 
+- 10.05.22: (0.0.4) Removed cbpi dependency
 - 10.12.21: (0.0.3) Updated README
 - 09.12.21: (0.0.2) Bug Fix for power
 - 09-12-21: (0.0.1) Initial release

@@ -7,7 +7,7 @@ with open(path.join(this_directory, 'README.md'), encoding='utf-8') as f:
     long_description = f.read()
 
 setup(name='cbpi4-PCF8574-GPIO',
-      version='0.0.3',
+      version='0.0.4',
       description='CraftBeerPi4 PCF8574 Actor Plugin',
       author='Alexander Vollkopf',
       author_email='avollkopf@web.de',
@@ -19,7 +19,6 @@ setup(name='cbpi4-PCF8574-GPIO',
       'cbpi4-PCF8574-GPIO': ['*','*.txt', '*.rst', '*.yaml']},
       packages=['cbpi4-PCF8574-GPIO'],
       install_requires=[
-      'cbpi>=4.0.0.33',
       'smbus2',
       'pcf8574-io'
       ],
