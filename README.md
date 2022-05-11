@@ -8,7 +8,6 @@ Theoretically, multiple boards (up to 8) could be connected with different addre
 ### Installation: 
 - sudo pip3 install cbpi4-PCF8574-GPIO
 - or install from repo: sudo pip3 install https://github.com/avollkopf/cbpi4-PCF8574-GPIO/archive/main.zip
-- cbpi add cbpi4-PCF8574-GPIO
 	
 ### Usage:
 
@@ -29,6 +28,7 @@ According to the datasheet, the pins can handle up to 25 mA. If you want to trig
 
 ### Changelog:
 
+- 11.05.22: (0.0.5) Updated README (removed cbpi add)
 - 10.05.22: (0.0.4) Removed cbpi dependency
 - 10.12.21: (0.0.3) Updated README
 - 09.12.21: (0.0.2) Bug Fix for power
