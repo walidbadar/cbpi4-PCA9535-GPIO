@@ -1,2 +1,0 @@
-name: cbpi4-PCA9535-GPIO
-version: 4
