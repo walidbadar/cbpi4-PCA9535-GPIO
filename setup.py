@@ -10,7 +10,6 @@ setup(name='cbpi4-PCA9535-GPIO',
       version='0.0.5',
       description='CraftBeerPi4 PCA9535 Actor Plugin',
       author='Waleed Badar',
-      author_email='avollkopf@web.de',
       url='https://github.com/walidbadar/cbpi4-PCA9535-GPIO',
       include_package_data=True,
       package_data={
