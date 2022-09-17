@@ -8,7 +8,6 @@ Theoretically, multiple boards (up to 8) could be connected with different addre
 ### Installation: 
 ```
 sudo pip3 install https://github.com/walidbadar/cbpi4-PCA9535-GPIO/archive/main.zip
-```
 sudo python3 -m pip install git+https://github.com/abelectronicsuk/ABElectronics_Python_Libraries.git
 ```
 ### Usage:
