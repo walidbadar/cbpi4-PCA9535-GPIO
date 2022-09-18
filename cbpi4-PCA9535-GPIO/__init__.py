@@ -51,7 +51,7 @@ class PCA9535(CBPiExtension):
     async def init_actor(self):
         await self.PCA9535_Address()
         logger.info("Checked PCF Address")
-        PCA9535_Address = self.cbpi.config.get("PCA9535_Address", "0x21")
+        # PCA9535_Address = self.cbpi.config.get("PCA9535_Address", "0x21")
         address = int(PCA9535_Address, 16)
         PCFActor(address)
 
