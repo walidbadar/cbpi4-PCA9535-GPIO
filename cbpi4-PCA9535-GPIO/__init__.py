@@ -18,7 +18,7 @@ logger = logging.getLogger(__name__)
 # creates the PCF_IO object only during startup. All sensors are using the same object
 def PCFActor(address):
     global p1
-
+    print(address)
     logger.info("***************** Start PCF Actor on I2C address {} ************************".format(hex(address)))
     try:
         # create to object with the defined address
@@ -51,7 +51,7 @@ class PCA9535(CBPiExtension):
     async def init_actor(self):
         await self.PCA9535_Address()
         logger.info("Checked PCF Address")
-        PCA9535_Address = self.cbpi.config.get("PCA9535_Address", "0x20")
+        PCA9535_Address = self.cbpi.config.get("PCA9535_Address", "0x21")
         address = int(PCA9535_Address, 16)
         PCFActor(address)
 
