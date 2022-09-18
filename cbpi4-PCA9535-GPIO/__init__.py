@@ -18,17 +18,20 @@ logger = logging.getLogger(__name__)
 # creates the PCF_IO object only during startup. All sensors are using the same object
 def PCFActor(address):
     global p1
-    pins = ["p0", "p1", "p2", "p3", "p4", "p5", "p6", "p7"]
+
     logger.info("***************** Start PCF Actor on I2C address {} ************************".format(hex(address)))
     try:
         # create to object with the defined address
         # p1 = PCA9535_io.PCF(address)
         p1 = IOZero32(address)  # use address 0x20
         # All pins are set to input at start -> set them to output and low
+        # pins = ["p0", "p1", "p2", "p3", "p4", "p5", "p6", "p7"]
         # for pin in pins:
         #     p1.pin_mode(pin,"OUTPUT")
         #     p1.write_pin(pin, "LOW")
+        p1.set_port_direction(0, 0x00)
         p1.set_port_direction(1, 0x00)
+        p1.write_port(0, 0x00)
         p1.write_port(1, 0x00)
         pass
     except:
@@ -65,7 +68,7 @@ class PCA9535(CBPiExtension):
                 logger.warning('Unable to update database')
 
 
-@parameters([Property.Select(label="GPIO", options=[9, 10, 11, 12, 13, 14, 15, 16]),
+@parameters([Property.Select(label="GPIO", options=[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32]),
              Property.Select(label="Inverted", options=["Yes", "No"],
                              description="No: Active on high; Yes: Active on low"),
              Property.Select(label="SamplingTime", options=[2, 5],
@@ -87,7 +90,7 @@ class PCA9535Actor(CBPiActor):
         self.inverted = True if self.props.get("Inverted", "No") == "Yes" else False
         self.p1off = 0 if self.inverted == False else 1
         self.p1on = 1 if self.inverted == False else 0
-        self.gpio = self.props.get("GPIO", 9)
+        self.gpio = self.props.get("GPIO", 1)
         self.sampleTime = int(self.props.get("SamplingTime", 5))
         # p1.pin_mode(self.gpio,"OUTPUT")
         p1.write_pin(self.gpio, self.p1off)
