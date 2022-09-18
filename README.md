@@ -13,9 +13,6 @@ sudo python3 -m pip install git+https://github.com/abelectronicsuk/ABElectronics
 ### Usage:
 
 - Configure the PCA9535 I2C Address in the cbpi global settings. 
-
-![PCA9535 I2C address Settings](https://raw.githubusercontent.com/walidbadar/cbpi4-PCA9535-GPIO/main/PCF8574_Address_Settings.png)
-
 - Add an actor under Hardware/Actor and select PCA9535Actor
 - Select the pin you want to switch (9 to 16)
 - Select 2 or 5 seconds for the Samplingtime (Will define the 'Resolution' for Power settings)
