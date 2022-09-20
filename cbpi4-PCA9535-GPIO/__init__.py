@@ -113,8 +113,9 @@ class PCA9535_2(CBPiExtension):
                              description="No: Active on high; Yes: Active on low"),
              Property.Select(label="SamplingTime", options=[2, 5],
                              description="Time in seconds for power base interval (Default:5)")])
+
 class PCA9535Actor_1(CBPiActor):
-    # Custom property which can be configured by the user
+    # Custom Property which can be configured by the user
     @action("Set Power",
             parameters=[Property.Number(label="Power", configurable=True, description="Power Setting [0-100]")])
     async def setpower(self, Power=100, **kwargs):
@@ -176,13 +177,14 @@ class PCA9535Actor_1(CBPiActor):
         await self.cbpi.actor.actor_update(self.id, power)
         pass
 
-@parameters([Property.Select(label="GPIO", options=[17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32]),
+@parameters([Property.Select(label="GPIO", options=[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]),
              Property.Select(label="Inverted", options=["Yes", "No"],
                              description="No: Active on high; Yes: Active on low"),
              Property.Select(label="SamplingTime", options=[2, 5],
                              description="Time in seconds for power base interval (Default:5)")])
+
 class PCA9535Actor_2(CBPiActor):
-    # Custom property which can be configured by the user
+    # Custom Property which can be configured by the user
     @action("Set Power",
             parameters=[Property.Number(label="Power", configurable=True, description="Power Setting [0-100]")])
     async def setpower(self, Power=100, **kwargs):
@@ -198,7 +200,7 @@ class PCA9535Actor_2(CBPiActor):
         self.inverted = True if self.props.get("Inverted", "No") == "Yes" else False
         self.p2off = 0 if self.inverted == False else 1
         self.p2on = 1 if self.inverted == False else 0
-        self.gpio = self.props.get("GPIO", 17)
+        self.gpio = self.props.get("GPIO", 1)
         self.sampleTime = int(self.props.get("SamplingTime", 5))
         # p2.pin_mode(self.gpio,"OUTPUT")
         p2.write_pin(self.gpio, self.p2off)
@@ -243,7 +245,6 @@ class PCA9535Actor_2(CBPiActor):
         self.power = power
         await self.cbpi.actor.actor_update(self.id, power)
         pass
-
 
 def setup(cbpi):
     cbpi.plugin.register("PCA9535Actor_1", PCA9535Actor_1)
