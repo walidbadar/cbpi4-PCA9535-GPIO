@@ -198,7 +198,7 @@ class PCA9535Actor_2(CBPiActor):
         self.inverted = True if self.props.get("Inverted", "No") == "Yes" else False
         self.p2off = 0 if self.inverted == False else 1
         self.p2on = 1 if self.inverted == False else 0
-        self.gpio = self.props.get("GPIO", 1)
+        self.gpio = self.props.get("GPIO", 17)
         self.sampleTime = int(self.props.get("SamplingTime", 5))
         # p2.pin_mode(self.gpio,"OUTPUT")
         p2.write_pin(self.gpio, self.p2off)
