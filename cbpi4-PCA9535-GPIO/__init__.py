@@ -27,8 +27,8 @@ def PCFActor_1(address):
         # All pins are set to input at start -> set them to output and low
         p1.set_port_direction(0, 0x00)
         p1.set_port_direction(1, 0x00)
-        p1.write_port(0, 0x00)
-        p1.write_port(1, 0x00)
+        p1.write_port(0, 0xff)
+        p1.write_port(1, 0xff)
         pass
     except:
         p1 = None
@@ -47,8 +47,8 @@ def PCFActor_2(address):
         # All pins are set to input at start -> set them to output and low
         p2.set_port_direction(0, 0x00)
         p2.set_port_direction(1, 0x00)
-        p2.write_port(0, 0x00)
-        p2.write_port(1, 0x00)
+        p2.write_port(0, 0xff)
+        p2.write_port(1, 0xff)
         pass
     except:
         p2 = None
