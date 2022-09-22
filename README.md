@@ -18,6 +18,8 @@ sudo python3 -m pip install git+https://github.com/abelectronicsuk/ABElectronics
 - Select 2 or 5 seconds for the Samplingtime (Will define the 'Resolution' for Power settings)
 - Select Inverted yes or no. No means, that the pin will be on high if the sensor is active
 
-- Made for a Scientist & Brewer - Tomasz Czernecki, PhD 
-- Contact: tomasz.czernecki@gmail.com
-- https://www.linkedin.com/in/tomaszczernecki/
+```
+Made for a Scientist & Brewer - Tomasz Czernecki, PhD 
+Contact: tomasz.czernecki@gmail.com
+https://www.linkedin.com/in/tomaszczernecki/
+```
